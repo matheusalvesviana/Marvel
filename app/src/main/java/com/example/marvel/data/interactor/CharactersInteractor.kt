@@ -6,7 +6,7 @@ import io.reactivex.Observable
 
 class CharactersInteractor constructor(private val repository: CharactersRepository) {
 
-    private fun execute(): Observable<Response> {
+    fun execute(): Observable<Response> {
         return repository.characters(
             "1",
             "3f2c0a88325ecd1507a4f1f2b4031cb7",
