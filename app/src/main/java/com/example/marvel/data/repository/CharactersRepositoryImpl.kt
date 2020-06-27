@@ -9,7 +9,7 @@ class CharactersRepositoryImpl constructor(
     private val cloud: CharactersCloudRepository
 ) : CharactersRepository {
     override fun characters(ts: String, apikey: String, hash: String): Observable<Response> {
-       val  query = mapOf<String, String>(
+        val query = mapOf(
             "ts" to ts,
             "apikey" to apikey,
             "hash" to hash
