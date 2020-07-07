@@ -14,7 +14,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:listitem="@layout/characther_item" />
+        tools:listitem="@layout/character_item" />
 
     <TextView
         android:id="@+id/tv_main"
