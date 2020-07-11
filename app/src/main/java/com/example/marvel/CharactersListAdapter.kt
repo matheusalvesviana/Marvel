@@ -19,8 +19,8 @@ class CharactersListAdapter(private val items: List<Result>) :
         val imageUrl = character.thumbnail.path.plus(".${character.thumbnail.extension}")
 
         Picasso.get().load(imageUrl)
-            .placeholder(R.drawable.ic_launcher_background)
-            .error(R.drawable.ic_launcher_background)
+            .placeholder(R.drawable.ic_placeholder)
+            .error(R.drawable.ic_error)
             .into(holder.imgCharacter)
 
         holder.tvName.text = character.name
