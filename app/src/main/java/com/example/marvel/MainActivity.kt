@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
             }
             .subscribe({
                 val items = it.data.results
-                val adapter = CharacthersListAdapter(items)
+                val adapter = CharactersListAdapter(items)
 
                 val layoutManager: RecyclerView.LayoutManager =
                     LinearLayoutManager(this@MainActivity)
