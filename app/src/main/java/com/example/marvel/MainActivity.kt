@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.marvel.data.interactor.CharactersInteractor
+import com.google.android.material.snackbar.Snackbar
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
@@ -24,22 +25,23 @@ class MainActivity : AppCompatActivity() {
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .doOnError {
-                tv_main.text = it.toString()
+                Snackbar.make(
+                    window.decorView.rootView,
+                    "Error ${it.message}",
+                    Snackbar.LENGTH_LONG
+                ).show()
             }
-            .subscribe({
+            .subscribe {
                 val items = it.data.results
                 val adapter = CharactersListAdapter(items)
 
                 val layoutManager: RecyclerView.LayoutManager =
                     LinearLayoutManager(this@MainActivity)
 
-                rv_main.setLayoutManager(layoutManager)
+                rv_main.layoutManager = layoutManager
 
-                rv_main.setAdapter(adapter)
-//                tv_main.text = it.toString()
-            }, {
-                Log.e("ERRO", it.toString())
-            })
+                rv_main.adapter = adapter
+            }
         )
 
     }
