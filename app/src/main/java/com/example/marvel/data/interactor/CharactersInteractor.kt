@@ -6,11 +6,12 @@ import io.reactivex.Observable
 
 class CharactersInteractor constructor(private val repository: CharactersRepository) {
 
-    fun execute(): Observable<Response> {
+    fun execute(limit: Int): Observable<Response> {
         return repository.characters(
             "<TS>",
             "<API_KEY>",
-            "<HASH>"
+            "<HASH>",
+            limit
         )
     }
 }

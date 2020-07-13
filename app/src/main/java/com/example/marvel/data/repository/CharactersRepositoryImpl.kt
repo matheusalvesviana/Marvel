@@ -8,11 +8,12 @@ import io.reactivex.Observable
 class CharactersRepositoryImpl constructor(
     private val cloud: CharactersCloudRepository
 ) : CharactersRepository {
-    override fun characters(ts: String, apikey: String, hash: String): Observable<Response> {
-        val query = mapOf(
+    override fun characters(ts: String, apikey: String, hash: String, limit: Int): Observable<Response> {
+        val query = hashMapOf(
             "ts" to ts,
             "apikey" to apikey,
-            "hash" to hash
+            "hash" to hash,
+            "limit" to limit
         )
         return cloud.characters(query)
     }

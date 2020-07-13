@@ -9,6 +9,6 @@ import retrofit2.http.QueryMap
 interface CharactersCloudRepository {
     @GET("/v1/public/characters")
     fun characters(
-        @QueryMap params: Map<String, String>
+        @QueryMap params: HashMap<String, Any>
     ): Observable<Response>
 }
