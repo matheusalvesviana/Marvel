@@ -69,4 +69,5 @@ dependencies {
     api "org.koin:koin-android:$koin_version"
     api "org.koin:koin-android-scope:$koin_version"
     api "org.koin:koin-androidx-scope:$koin_version"
+    api "org.koin:koin-android-viewmodel:$koin_version"
 }

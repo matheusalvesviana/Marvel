@@ -1,5 +1,6 @@
 package com.example.marvel.di
 
+import com.example.marvel.MainViewModel
 import com.example.marvel.data.datasource.CharactersCloudRepository
 import com.example.marvel.data.datasource.CharactersRepository
 import com.example.marvel.data.interactor.CharactersInteractor
@@ -11,6 +12,7 @@ import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
+import org.koin.android.viewmodel.dsl.viewModel
 
 interface Injection {
     val module: Module
@@ -21,6 +23,7 @@ interface Injection {
             single { provideOkhttpClient(get()) }
             factory { provideRetrofit(get()) }
             factory { provideHttpLoggingInterceptor() }
+            viewModel { MainViewModel(get()) }
         }
 
     fun provideCharactersInteractor(charactersRepository: CharactersRepository): CharactersInteractor

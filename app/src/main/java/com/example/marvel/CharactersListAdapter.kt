@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.example.marvel.model.Result
 import com.squareup.picasso.Picasso
 
-class CharactersListAdapter(private val items: List<Result>) :
+class CharactersListAdapter(val items: MutableList<Result>) :
     RecyclerView.Adapter<CharacterViewHolder>() {
 
     override fun onBindViewHolder(holder: CharacterViewHolder, position: Int) {

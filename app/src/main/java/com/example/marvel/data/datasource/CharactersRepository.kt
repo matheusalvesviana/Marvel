@@ -4,5 +4,5 @@ import com.example.marvel.model.Response
 import io.reactivex.Observable
 
 interface CharactersRepository {
-    fun characters(ts: String, apikey: String, hash: String, limit: Int): Observable<Response>
+    fun characters(ts: String, apikey: String, hash: String, limit: Int, offset: Int): Observable<Response>
 }
