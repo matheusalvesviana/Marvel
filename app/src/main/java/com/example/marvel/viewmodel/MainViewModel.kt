@@ -1,8 +1,9 @@
-package com.example.marvel
+package com.example.marvel.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.marvel.MainState
 import com.example.marvel.MainState.*
 import com.example.marvel.data.interactor.CharactersInteractor
 import io.reactivex.android.schedulers.AndroidSchedulers

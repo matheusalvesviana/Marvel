@@ -1,6 +1,6 @@
 package com.example.marvel.di
 
-import com.example.marvel.MainViewModel
+import com.example.marvel.viewmodel.MainViewModel
 import com.example.marvel.data.datasource.CharactersCloudRepository
 import com.example.marvel.data.datasource.CharactersRepository
 import com.example.marvel.data.interactor.CharactersInteractor
