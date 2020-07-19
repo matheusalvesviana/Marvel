@@ -16,5 +16,4 @@ object Fixture {
             .bufferedReader()
             .use { it.readText() }
     }
-
 }
